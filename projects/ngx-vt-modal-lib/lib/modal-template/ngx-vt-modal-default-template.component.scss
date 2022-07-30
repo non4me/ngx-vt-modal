@@ -1,0 +1,33 @@
+@import 'ngx-vt-modal.common.variables';
+
+:host {
+  .ngx-vt-modal-default {
+    width: fit-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    min-width: 310px;
+    max-width: 1200px;
+    height: fit-content;
+    background: white;
+    border-radius: 14px;
+
+    &__header {
+      @include modal-header;
+    }
+
+    &__title {
+      @include modal-title;
+    }
+
+    &__close {
+      @include modal-close;
+    }
+
+    @media (width < 640px) {
+      width: calc(100% - 10px);
+    }
+  }
+}

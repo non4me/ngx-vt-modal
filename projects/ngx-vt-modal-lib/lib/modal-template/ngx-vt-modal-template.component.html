@@ -1,0 +1,7 @@
+<div class="store-modal-{{modalSize}}">
+  <div class="store-modal-{{modalSize}}__header" *ngIf="showHeader">
+    <div class="store-modal-{{modalSize}}__title">{{ options?.title }}</div>
+    <div class="store-modal-{{modalSize}}__close" (click)="close()"  *ngIf="showCloseButton">✖</div>
+  </div>
+  <div id="store-modal-body" class="store-modal-{{modalSize}}__body"></div>
+</div>
