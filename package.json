@@ -1,6 +1,6 @@
 {
   "name": "ngx-vt-modal",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "scripts": {
     "build-lib": "npm version patch --force && ng build ngx-vt-modal-lib",
     "pack-lib": "cd ./projects/ngx-vt-modal-lib/dist && npm pack",
@@ -20,10 +20,10 @@
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
+    "ngx-vt-modal": "./projects/ngx-vt-modal-lib/dist/ngx-vt-modal-12.0.0.tgz",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4",
-    "ngx-vt-modal": "./projects/ngx-vt-modal-lib/dist/ngx-vt-modal-12.0.0.tgz"
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.1.0",
