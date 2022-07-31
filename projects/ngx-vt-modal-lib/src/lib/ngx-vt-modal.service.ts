@@ -23,7 +23,7 @@ export class NgxVtModalService {
   private backdrop: HTMLDivElement;
   private modals = [];
   private renderer: Renderer2;
-  private MODAL_BODY_SELECTOR = 'div#store-modal-body';
+  private MODAL_BODY_SELECTOR = 'div#ngx-vt-modal-body';
   private DEFAULT_BACKGROUND_COLOR = '#00000066'
 
   constructor(
@@ -92,7 +92,7 @@ export class NgxVtModalService {
   private createHost(options?: NgxVtModalOptions): HTMLDivElement {
     const host = this.renderer.createElement('div');
     this.renderer.setStyle(host, 'zIndex', `${this.maxZIndex() + 1}`);
-    this.renderer.addClass(host, 'store-modal-host');
+    this.renderer.addClass(host, 'ngx-vt-modal-host');
     this.renderer.setStyle(host, 'position', 'fixed');
     this.renderer.setStyle(host, 'width', '100%');
     this.renderer.setStyle(host, 'height', '100%');
@@ -112,7 +112,7 @@ export class NgxVtModalService {
     if(!this.backdrop) {
       this.backdrop = this.renderer.createElement('div');
       this.renderer.setStyle(this.backdrop, 'zIndex', `${this.maxZIndex() + 1}`);
-      this.renderer.addClass(this.backdrop, 'store-modal-backdrop');
+      this.renderer.addClass(this.backdrop, 'ngx-vt-modal-backdrop');
       this.renderer.setStyle(this.backdrop, 'position', 'fixed');
       this.renderer.setStyle(this.backdrop, 'top', 0);
       this.renderer.setStyle(this.backdrop, 'left', 0);
@@ -122,10 +122,10 @@ export class NgxVtModalService {
       // check if global css has rule for backdrop background
       // add to style.css rule :
       // :root {
-      //   --store-modal-backdrop-background : yourColor;
+      //   --ngx-vt-modal-backdrop-background : yourColor;
       // }
       const background = getComputedStyle(document.documentElement)
-        .getPropertyValue('--store-modal-backdrop-background')  || this.DEFAULT_BACKGROUND_COLOR;
+        .getPropertyValue('--ngx-vt-modal-backdrop-background')  || this.DEFAULT_BACKGROUND_COLOR;
       this.renderer.setStyle(this.backdrop, 'backgroundColor', background);
 
       const appRoot = this.document.body;

@@ -1,9 +1,9 @@
 /*
- * Public API Surface of store-modal
+ * Public API Surface of ngx-vt-modal
  */
 
-export * from './lib/ngx-vt-modal.service';
-export * from './lib/ngx-vt-modal.module';
-export * from './lib/model/ngx-vt-modal-size';
-export * from './lib/model/ngx-vt-modal-options';
-export * from './lib/model/ngx-vt-modal-close-status';
+export * from './src/lib/ngx-vt-modal.service';
+export * from './src/lib/ngx-vt-modal.module';
+export * from './src/lib/model/ngx-vt-modal-size';
+export * from './src/lib/model/ngx-vt-modal-options';
+export * from './src/lib/model/ngx-vt-modal-close-status';

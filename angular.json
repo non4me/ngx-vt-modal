@@ -105,6 +105,37 @@
           }
         }
       }
+    },
+    "ngx-vt-modal-lib": {
+      "projectType": "library",
+      "root": "projects/ngx-vt-modal-lib",
+      "sourceRoot": "projects/ngx-vt-modal-lib/src",
+      "prefix": "ngx-vt",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-vt-modal-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-vt-modal-lib/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-vt-modal-lib/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-vt-modal-lib/src/test.ts",
+            "tsConfig": "projects/ngx-vt-modal-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-vt-modal-lib/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "ngx-vt-modal"

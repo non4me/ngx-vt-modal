@@ -1,10 +1,6 @@
 {
-  "name": "ngx-vt-modal-lib",
-  "version": "12.0.3",
-  "scripts": {
-    "build-modal": "npm version patch --force && ng build store-modal",
-    "pack-modal": "cd ./dist/npx-vt-modal && npm pack"
-  },
+  "name": "ngx-vt-modal",
+  "version": "12.0.0",
   "peerDependencies": {
     "@angular/common": "^12.1.2",
     "@angular/core": "^12.1.2"

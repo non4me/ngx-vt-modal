@@ -3,7 +3,7 @@
   "version": "0.0.5",
   "scripts": {
     "build-lib": "npm version patch --force && ng build ngx-vt-modal-lib",
-    "pack-lib": "cd ./projects/ngx-vt-modal-lib/dist/npx-vt-modal && npm pack",
+    "pack-lib": "cd ./projects/ngx-vt-modal-lib/dist && npm pack",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -22,7 +22,8 @@
     "@angular/router": "~12.2.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4"
+    "zone.js": "~0.11.4",
+    "ngx-vt-modal": "./projects/ngx-vt-modal-lib/dist/ngx-vt-modal-12.0.0.tgz"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.1.0",

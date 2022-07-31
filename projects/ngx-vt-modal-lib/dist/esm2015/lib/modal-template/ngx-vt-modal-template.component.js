@@ -1,0 +1,48 @@
+import { Component, HostListener, Input } from '@angular/core';
+import { NgxVtModalCloseStatus } from '../model/ngx-vt-modal-close-status';
+import { NgxVtModalSize } from '../model/ngx-vt-modal-size';
+import * as i0 from "@angular/core";
+import * as i1 from "../ngx-vt-modal.service";
+import * as i2 from "@angular/common";
+export class NgxVtModalTemplateComponent {
+    constructor(service) {
+        this.service = service;
+        this.showHeader = true;
+        this.showCloseButton = true;
+        this.modalSize = NgxVtModalSize.DEFAULT;
+    }
+    escape() {
+        if (this.options.useEsc) {
+            this.service.close({ dismiss: NgxVtModalCloseStatus.ESC });
+        }
+    }
+    ngOnInit() {
+        var _a, _b;
+        this.showHeader = typeof this.options.showHeader === 'undefined' ? true : this.options.showHeader;
+        this.showCloseButton = typeof this.options.showCloseButton === 'undefined' ? true : this.options.showCloseButton;
+        this.modalSize = Object.values(NgxVtModalSize).includes((_a = this.options) === null || _a === void 0 ? void 0 : _a.size) ? (_b = this.options) === null || _b === void 0 ? void 0 : _b.size : NgxVtModalSize.DEFAULT;
+    }
+    close() {
+        this.service.close({ dismiss: NgxVtModalCloseStatus.BUTTON });
+    }
+}
+NgxVtModalTemplateComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.16", ngImport: i0, type: NgxVtModalTemplateComponent, deps: [{ token: i1.NgxVtModalService }], target: i0.ɵɵFactoryTarget.Component });
+NgxVtModalTemplateComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.16", type: NgxVtModalTemplateComponent, selector: "ngx-vt-modal-template", inputs: { options: "options" }, host: { listeners: { "window:keydown.esc": "escape()" } }, ngImport: i0, template: "<div class=\"ngx-vt-modal-{{modalSize}}\">\r\n  <div class=\"ngx-vt-modal-{{modalSize}}__header\" *ngIf=\"showHeader\">\r\n    <div class=\"ngx-vt-modal-{{modalSize}}__title\">{{ options?.title }}</div>\r\n    <div class=\"ngx-vt-modal-{{modalSize}}__close\" (click)=\"close()\"  *ngIf=\"showCloseButton\">\u2716</div>\r\n  </div>\r\n  <div id=\"ngx-vt-modal-body\" class=\"ngx-vt-modal-{{modalSize}}__body\"></div>\r\n</div>\r\n", styles: [":host .ngx-vt-modal-default{width:-moz-fit-content;width:fit-content;position:absolute;top:50%;left:50%;margin-right:-50%;transform:translate(-50%,-50%);min-width:310px;max-width:1200px;height:-moz-fit-content;height:fit-content;background:white;border-radius:14px}:host .ngx-vt-modal-default__header{display:flex;flex-direction:row;height:50px;border-bottom:1px solid #eee}:host .ngx-vt-modal-default__title{flex:auto;line-height:2.5;font-size:20px;font-weight:700;text-align:center}:host .ngx-vt-modal-default__close{float:right;margin:10px;cursor:pointer;font-size:20px}@media (max-width: 639px){:host .ngx-vt-modal-default{width:calc(100% - 10px)}}\n", ":host .ngx-vt-modal-fullscreen{width:100%;height:100%;position:absolute;background:white}:host .ngx-vt-modal-fullscreen__header{display:flex;flex-direction:row;height:50px;border-bottom:1px solid #eee}:host .ngx-vt-modal-fullscreen__title{flex:auto;line-height:2.5;font-size:20px;font-weight:700;text-align:center}:host .ngx-vt-modal-fullscreen__body{width:100%;height:100%}:host .ngx-vt-modal-fullscreen__close{float:right;margin:10px;cursor:pointer;font-size:20px}\n", ":host .ngx-vt-modal-small{width:-moz-fit-content;width:fit-content;position:absolute;top:50%;left:50%;margin-right:-50%;transform:translate(-50%,-50%);min-width:220px;max-width:480px;height:-moz-fit-content;height:fit-content;min-height:220px;background:white;border-radius:14px}:host .ngx-vt-modal-small__header{display:none}:host .ngx-vt-modal-small__body{display:flex;align-items:center;justify-content:center}@media (max-width: 479px){:host .ngx-vt-modal-small{width:calc(100% - 10px)}}\n"], directives: [{ type: i2.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }] });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.16", ngImport: i0, type: NgxVtModalTemplateComponent, decorators: [{
+            type: Component,
+            args: [{
+                    selector: 'ngx-vt-modal-template',
+                    templateUrl: './ngx-vt-modal-template.component.html',
+                    styleUrls: [
+                        './ngx-vt-modal-default-template.component.scss',
+                        './ngx-vt-modal-fullscreen-template.component.scss',
+                        './ngx-vt-modal-small-template.component.scss'
+                    ]
+                }]
+        }], ctorParameters: function () { return [{ type: i1.NgxVtModalService }]; }, propDecorators: { options: [{
+                type: Input
+            }], escape: [{
+                type: HostListener,
+                args: ['window:keydown.esc']
+            }] } });
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibmd4LXZ0LW1vZGFsLXRlbXBsYXRlLmNvbXBvbmVudC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL3NyYy9saWIvbW9kYWwtdGVtcGxhdGUvbmd4LXZ0LW1vZGFsLXRlbXBsYXRlLmNvbXBvbmVudC50cyIsIi4uLy4uLy4uLy4uL3NyYy9saWIvbW9kYWwtdGVtcGxhdGUvbmd4LXZ0LW1vZGFsLXRlbXBsYXRlLmNvbXBvbmVudC5odG1sIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE9BQU8sRUFBRSxTQUFTLEVBQUUsWUFBWSxFQUFFLEtBQUssRUFBVSxNQUFNLGVBQWUsQ0FBQztBQUl2RSxPQUFPLEVBQUUscUJBQXFCLEVBQUUsTUFBTSxvQ0FBb0MsQ0FBQztBQUMzRSxPQUFPLEVBQUUsY0FBYyxFQUFFLE1BQU0sNEJBQTRCLENBQUM7Ozs7QUFXNUQsTUFBTSxPQUFPLDJCQUEyQjtJQVF0QyxZQUFvQixPQUEwQjtRQUExQixZQUFPLEdBQVAsT0FBTyxDQUFtQjtRQUo5QyxlQUFVLEdBQUcsSUFBSSxDQUFDO1FBQ2xCLG9CQUFlLEdBQUcsSUFBSSxDQUFDO1FBQ3ZCLGNBQVMsR0FBRyxjQUFjLENBQUMsT0FBTyxDQUFDO0lBR25DLENBQUM7SUFHRCxNQUFNO1FBQ0osSUFBSSxJQUFJLENBQUMsT0FBTyxDQUFDLE1BQU0sRUFBRTtZQUN2QixJQUFJLENBQUMsT0FBTyxDQUFDLEtBQUssQ0FBQyxFQUFFLE9BQU8sRUFBRSxxQkFBcUIsQ0FBQyxHQUFHLEVBQUUsQ0FBQyxDQUFDO1NBQzVEO0lBQ0gsQ0FBQztJQUVELFFBQVE7O1FBQ04sSUFBSSxDQUFDLFVBQVUsR0FBRyxPQUFPLElBQUksQ0FBQyxPQUFPLENBQUMsVUFBVSxLQUFLLFdBQVcsQ0FBQyxDQUFDLENBQUMsSUFBSSxDQUFDLENBQUMsQ0FBQyxJQUFJLENBQUMsT0FBTyxDQUFDLFVBQVUsQ0FBQztRQUNsRyxJQUFJLENBQUMsZUFBZSxHQUFHLE9BQU8sSUFBSSxDQUFDLE9BQU8sQ0FBQyxlQUFlLEtBQUssV0FBVyxDQUFDLENBQUMsQ0FBQyxJQUFJLENBQUMsQ0FBQyxDQUFDLElBQUksQ0FBQyxPQUFPLENBQUMsZUFBZSxDQUFDO1FBQ2pILElBQUksQ0FBQyxTQUFTLEdBQUcsTUFBTSxDQUFDLE1BQU0sQ0FBQyxjQUFjLENBQUMsQ0FBQyxRQUFRLENBQUMsTUFBQSxJQUFJLENBQUMsT0FBTywwQ0FBRSxJQUFJLENBQUMsQ0FBQyxDQUFDLENBQUMsTUFBQSxJQUFJLENBQUMsT0FBTywwQ0FBRSxJQUFJLENBQUMsQ0FBQyxDQUFDLGNBQWMsQ0FBQyxPQUFPLENBQUM7SUFDNUgsQ0FBQztJQUVELEtBQUs7UUFDSCxJQUFJLENBQUMsT0FBTyxDQUFDLEtBQUssQ0FBQyxFQUFFLE9BQU8sRUFBRSxxQkFBcUIsQ0FBQyxNQUFNLEVBQUUsQ0FBQyxDQUFDO0lBQ2hFLENBQUM7O3lIQTFCVSwyQkFBMkI7NkdBQTNCLDJCQUEyQix3SkNoQnhDLCthQU9BOzRGRFNhLDJCQUEyQjtrQkFUdkMsU0FBUzttQkFBQztvQkFDVCxRQUFRLEVBQUUsdUJBQXVCO29CQUNqQyxXQUFXLEVBQUUsd0NBQXdDO29CQUNyRCxTQUFTLEVBQUU7d0JBQ1QsZ0RBQWdEO3dCQUNoRCxtREFBbUQ7d0JBQ25ELDhDQUE4QztxQkFDL0M7aUJBQ0Y7d0dBR1UsT0FBTztzQkFBZixLQUFLO2dCQVVOLE1BQU07c0JBREwsWUFBWTt1QkFBQyxvQkFBb0IiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBDb21wb25lbnQsIEhvc3RMaXN0ZW5lciwgSW5wdXQsIE9uSW5pdCB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuXG5pbXBvcnQgeyBOZ3hWdE1vZGFsT3B0aW9ucyB9IGZyb20gJy4uL21vZGVsL25neC12dC1tb2RhbC1vcHRpb25zJztcbmltcG9ydCB7IE5neFZ0TW9kYWxTZXJ2aWNlIH0gZnJvbSAnLi4vbmd4LXZ0LW1vZGFsLnNlcnZpY2UnO1xuaW1wb3J0IHsgTmd4VnRNb2RhbENsb3NlU3RhdHVzIH0gZnJvbSAnLi4vbW9kZWwvbmd4LXZ0LW1vZGFsLWNsb3NlLXN0YXR1cyc7XG5pbXBvcnQgeyBOZ3hWdE1vZGFsU2l6ZSB9IGZyb20gJy4uL21vZGVsL25neC12dC1tb2RhbC1zaXplJztcblxuQENvbXBvbmVudCh7XG4gIHNlbGVjdG9yOiAnbmd4LXZ0LW1vZGFsLXRlbXBsYXRlJyxcbiAgdGVtcGxhdGVVcmw6ICcuL25neC12dC1tb2RhbC10ZW1wbGF0ZS5jb21wb25lbnQuaHRtbCcsXG4gIHN0eWxlVXJsczogW1xuICAgICcuL25neC12dC1tb2RhbC1kZWZhdWx0LXRlbXBsYXRlLmNvbXBvbmVudC5zY3NzJyxcbiAgICAnLi9uZ3gtdnQtbW9kYWwtZnVsbHNjcmVlbi10ZW1wbGF0ZS5jb21wb25lbnQuc2NzcycsXG4gICAgJy4vbmd4LXZ0LW1vZGFsLXNtYWxsLXRlbXBsYXRlLmNvbXBvbmVudC5zY3NzJ1xuICBdXG59KVxuZXhwb3J0IGNsYXNzIE5neFZ0TW9kYWxUZW1wbGF0ZUNvbXBvbmVudCBpbXBsZW1lbnRzIE9uSW5pdCB7XG5cbiAgQElucHV0KCkgb3B0aW9uczogTmd4VnRNb2RhbE9wdGlvbnM7XG5cbiAgc2hvd0hlYWRlciA9IHRydWU7XG4gIHNob3dDbG9zZUJ1dHRvbiA9IHRydWU7XG4gIG1vZGFsU2l6ZSA9IE5neFZ0TW9kYWxTaXplLkRFRkFVTFQ7XG5cbiAgY29uc3RydWN0b3IocHJpdmF0ZSBzZXJ2aWNlOiBOZ3hWdE1vZGFsU2VydmljZSkge1xuICB9XG5cbiAgQEhvc3RMaXN0ZW5lcignd2luZG93OmtleWRvd24uZXNjJylcbiAgZXNjYXBlKCk6IHZvaWQge1xuICAgIGlmICh0aGlzLm9wdGlvbnMudXNlRXNjKSB7XG4gICAgICB0aGlzLnNlcnZpY2UuY2xvc2UoeyBkaXNtaXNzOiBOZ3hWdE1vZGFsQ2xvc2VTdGF0dXMuRVNDIH0pO1xuICAgIH1cbiAgfVxuXG4gIG5nT25Jbml0KCk6IHZvaWQge1xuICAgIHRoaXMuc2hvd0hlYWRlciA9IHR5cGVvZiB0aGlzLm9wdGlvbnMuc2hvd0hlYWRlciA9PT0gJ3VuZGVmaW5lZCcgPyB0cnVlIDogdGhpcy5vcHRpb25zLnNob3dIZWFkZXI7XG4gICAgdGhpcy5zaG93Q2xvc2VCdXR0b24gPSB0eXBlb2YgdGhpcy5vcHRpb25zLnNob3dDbG9zZUJ1dHRvbiA9PT0gJ3VuZGVmaW5lZCcgPyB0cnVlIDogdGhpcy5vcHRpb25zLnNob3dDbG9zZUJ1dHRvbjtcbiAgICB0aGlzLm1vZGFsU2l6ZSA9IE9iamVjdC52YWx1ZXMoTmd4VnRNb2RhbFNpemUpLmluY2x1ZGVzKHRoaXMub3B0aW9ucz8uc2l6ZSkgPyB0aGlzLm9wdGlvbnM/LnNpemUgOiBOZ3hWdE1vZGFsU2l6ZS5ERUZBVUxUO1xuICB9XG5cbiAgY2xvc2UoKTogdm9pZCB7XG4gICAgdGhpcy5zZXJ2aWNlLmNsb3NlKHsgZGlzbWlzczogTmd4VnRNb2RhbENsb3NlU3RhdHVzLkJVVFRPTiB9KTtcbiAgfVxufVxuIiwiPGRpdiBjbGFzcz1cIm5neC12dC1tb2RhbC17e21vZGFsU2l6ZX19XCI+XHJcbiAgPGRpdiBjbGFzcz1cIm5neC12dC1tb2RhbC17e21vZGFsU2l6ZX19X19oZWFkZXJcIiAqbmdJZj1cInNob3dIZWFkZXJcIj5cclxuICAgIDxkaXYgY2xhc3M9XCJuZ3gtdnQtbW9kYWwte3ttb2RhbFNpemV9fV9fdGl0bGVcIj57eyBvcHRpb25zPy50aXRsZSB9fTwvZGl2PlxyXG4gICAgPGRpdiBjbGFzcz1cIm5neC12dC1tb2RhbC17e21vZGFsU2l6ZX19X19jbG9zZVwiIChjbGljayk9XCJjbG9zZSgpXCIgICpuZ0lmPVwic2hvd0Nsb3NlQnV0dG9uXCI+4pyWPC9kaXY+XHJcbiAgPC9kaXY+XHJcbiAgPGRpdiBpZD1cIm5neC12dC1tb2RhbC1ib2R5XCIgY2xhc3M9XCJuZ3gtdnQtbW9kYWwte3ttb2RhbFNpemV9fV9fYm9keVwiPjwvZGl2PlxyXG48L2Rpdj5cclxuIl19

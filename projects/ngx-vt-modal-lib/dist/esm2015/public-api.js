@@ -1,0 +1,9 @@
+/*
+ * Public API Surface of ngx-vt-modal
+ */
+export * from './lib/ngx-vt-modal.service';
+export * from './lib/ngx-vt-modal.module';
+export * from './lib/model/ngx-vt-modal-size';
+export * from './lib/model/ngx-vt-modal-options';
+export * from './lib/model/ngx-vt-modal-close-status';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9wdWJsaWMtYXBpLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOztHQUVHO0FBRUgsY0FBYyw0QkFBNEIsQ0FBQztBQUMzQyxjQUFjLDJCQUEyQixDQUFDO0FBQzFDLGNBQWMsK0JBQStCLENBQUM7QUFDOUMsY0FBYyxrQ0FBa0MsQ0FBQztBQUNqRCxjQUFjLHVDQUF1QyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiLypcbiAqIFB1YmxpYyBBUEkgU3VyZmFjZSBvZiBuZ3gtdnQtbW9kYWxcbiAqL1xuXG5leHBvcnQgKiBmcm9tICcuL2xpYi9uZ3gtdnQtbW9kYWwuc2VydmljZSc7XG5leHBvcnQgKiBmcm9tICcuL2xpYi9uZ3gtdnQtbW9kYWwubW9kdWxlJztcbmV4cG9ydCAqIGZyb20gJy4vbGliL21vZGVsL25neC12dC1tb2RhbC1zaXplJztcbmV4cG9ydCAqIGZyb20gJy4vbGliL21vZGVsL25neC12dC1tb2RhbC1vcHRpb25zJztcbmV4cG9ydCAqIGZyb20gJy4vbGliL21vZGVsL25neC12dC1tb2RhbC1jbG9zZS1zdGF0dXMnO1xuIl19

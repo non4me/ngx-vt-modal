@@ -1,7 +1,3 @@
-/*
- * Public API Surface of ngx-vt-modal
- */
-
 export * from './lib/ngx-vt-modal.service';
 export * from './lib/ngx-vt-modal.module';
 export * from './lib/model/ngx-vt-modal-size';
