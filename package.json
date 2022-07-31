@@ -1,9 +1,9 @@
 {
   "name": "ngx-vt-modal",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "scripts": {
     "build-lib": "npm version patch --force && ng build ngx-vt-modal-lib",
-    "pack-lib": "cd ./dist/npx-vt-modal && npm pack",
+    "pack-lib": "cd ./projects/ngx-vt-modal-lib/dist/npx-vt-modal && npm pack",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
