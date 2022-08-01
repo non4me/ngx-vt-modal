@@ -82,30 +82,124 @@ export class DialogComponent{
 ```
 
 ## Options
-**Close the modal with escape key**
-  <br>useEsc?: boolean; `default: false`
 
-**Close the modal on the backdrop click**
-<br>closeOnBackdropClick?: boolean; `default: false`
+<table>
+<thead>
+<th>Option</th>
+<th>Mandatory<br> option</th>
+<th>Data<br> type</th>
+<th>Default<br> value</th>
+</thead>
+<tbody>
+<tr>
+<td>
+<b>useEsc</b><br>
+<i>Close the modal with escape key</i>
+</td>
+<td>No</td>
+<td>boolean</td>
+<td>false</td>
+</tr>
 
-**Show header of the modal**
-<br>showHeader?: boolean; `default: unavailable - for small modal, true - for default and fullscreen`
+<tr>
+<td>
+<b>closeOnBackdropClick</b>
+<br>
+<i>Close the modal on the backdrop click</i>
+</td>
+<td>No</td>
+<td>boolean</td>
+<td>false</td>
+</tr>
 
-**Modal title**
-<br>title?: string;  `default: '', when showHeader is true`
+<tr>
+<td>
+<b>showHeader</b>
+<br>
+<i>Show header of the modal</i>
+</td>
+<td>No</td>
+<td>boolean</td>
+<td>
+<ul>
+unavailable:
+<li>NgxVtModalSize.SMALL
+</ul>
+<ul>
+true:
+<li>NgxVtModalSize.DEFAULT
+<li>NgxVtModalSize.FULLSCREEN
+</ul>
+</td>
+</tr>
 
-**Show close button**
-<br>showCloseButton?: boolean; `default: unavailable - for small modal, true - for default and fullscreen`
+<tr>
+<td>
+<b>title</b><br>
+<i>Modal title</i>
+</td>
+<td>No</td>
+<td>string</td>
+<td>' ' (empty string),<br> when showHeader is true</td>
+</tr>
 
-**Custom css class for the modal**
-<br>class?: string;
+<tr>
+<td>
+<b>showCloseButton</b><br>
+<i>Show close button</i>
+</td>
+<td>No</td>
+<td>boolean</td>
+<td>
+<ul>
+unavailable:
+<li>NgxVtModalSize.SMALL
+</ul>
+<ul>
+true:
+<li>NgxVtModalSize.DEFAULT
+<li>NgxVtModalSize.FULLSCREEN
+</ul>
+</td>
+</tr>
 
-**Modal size**
-<br>size?: NgxVtModalSize enum; `default: NgxVtModalSize.DEFAULT`
-  * NgxVtModalSize.SMALL
-  * NgxVtModalSize.DEFAULT
-  * NgxVtModalSize.FULLSCREEN
+<tr>
+<td>
+<b>class</b><br>
+<i>Custom css class for the modal</i>
+</td>
+<td>No</td>
+<td>string</td>
+<td>' ' (empty string)</td>
+</tr>
 
-**Modal data**
-<br>data?: Object;
+<tr>
+<td>
+<b>size</b><br>
+<i>Modal size</i>
+</td>
+<td>No</td>
+<td>
+enum:
+<ul>
+<li> NgxVtModalSize.SMALL
+<li> NgxVtModalSize.DEFAULT
+<li> NgxVtModalSize.FULLSCREEN
+</ul>
+</td>
+<td>
+NgxVtModalSize.DEFAULT
+</td>
+</tr>
 
+<tr>
+<td>
+<b>data</b><br>
+<i>Modal data</i>
+</td>
+<td>No</td>
+<td>Object: any</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>

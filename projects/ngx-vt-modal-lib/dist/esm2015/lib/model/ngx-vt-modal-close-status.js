@@ -1,7 +1,0 @@
-export var NgxVtModalCloseStatus;
-(function (NgxVtModalCloseStatus) {
-    NgxVtModalCloseStatus["ESC"] = "esc";
-    NgxVtModalCloseStatus["BACKDROP"] = "backdrop";
-    NgxVtModalCloseStatus["BUTTON"] = "button";
-})(NgxVtModalCloseStatus || (NgxVtModalCloseStatus = {}));
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibmd4LXZ0LW1vZGFsLWNsb3NlLXN0YXR1cy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL3NyYy9saWIvbW9kZWwvbmd4LXZ0LW1vZGFsLWNsb3NlLXN0YXR1cy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxNQUFNLENBQU4sSUFBWSxxQkFJWDtBQUpELFdBQVkscUJBQXFCO0lBQy9CLG9DQUFXLENBQUE7SUFDWCw4Q0FBcUIsQ0FBQTtJQUNyQiwwQ0FBaUIsQ0FBQTtBQUNuQixDQUFDLEVBSlcscUJBQXFCLEtBQXJCLHFCQUFxQixRQUloQyIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBlbnVtIE5neFZ0TW9kYWxDbG9zZVN0YXR1cyB7XG4gIEVTQyA9ICdlc2MnLFxuICBCQUNLRFJPUCA9ICdiYWNrZHJvcCcsXG4gIEJVVFRPTiA9ICdidXR0b24nLFxufVxuIl19

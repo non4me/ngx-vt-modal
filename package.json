@@ -2,7 +2,8 @@
   "name": "ngx-vt-modal",
   "version": "0.0.8",
   "scripts": {
-    "build-lib": "npm version patch --force && ng build ngx-vt-modal-lib",
+    "up": "npm run build-lib && npm run pack-lib",
+    "build-lib": "cd ./projects/ngx-vt-modal-lib && npm version patch --force && cd ../../ && ng build ngx-vt-modal-lib",
     "pack-lib": "cd ./projects/ngx-vt-modal-lib/dist && npm pack",
     "ng": "ng",
     "start": "ng serve",
@@ -20,13 +21,13 @@
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
-    "ngx-vt-modal": "./projects/ngx-vt-modal-lib/dist/ngx-vt-modal-12.0.0.tgz",
+    "ngx-vt-modal": "./projects/ngx-vt-modal-lib/dist/ngx-vt-modal-12.0.6.tgz",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^14.1.0",
+    "@angular-devkit/build-angular": "^12.1.0",
     "@angular/cli": "~12.2.17",
     "@angular/compiler-cli": "~12.2.0",
     "@types/jasmine": "~3.8.0",
