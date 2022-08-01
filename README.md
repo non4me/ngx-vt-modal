@@ -1,27 +1,205 @@
-# NgxVtModal
+# ngx-vtModal
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.17.
+This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.2.
 
-## Development server
+## Instalation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng install ngx-vt-modal`
 
-## Code scaffolding
+Add to `app.module.ts`:
+<pre>
+import { NgxVtModalModule } from 'ngx-vt-modal';
+...
+imports: [
+    NgxVtModalModule,
+    ...
+]
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+</pre>
 
-## Build
+## Usage
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```typescript
+// Modal opener component or service
+constuctor(
+    private modalService: NgxVtModalService
+){}
 
-## Running unit tests
+openModal(): void {
+  this.modalService.open(DialogComponent);
+}
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+// or
 
-## Running end-to-end tests
+openModal(): void {
+  const modalRef = this.modalService.open(DialogComponent, {
+    size: NgxVtModalSize.SMALL,
+    useEsc: true,
+    data: {...any}
+  });
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+  // build-in Event closeModal$
+  modalRef.closeModal$
+    .subscribe(data => {
+        if.data?.result === 'OK' {
+            // do anything
+        }
+    });
+  
+  // or your custom Event
+  modalRef.myCustomEvent$
+    .subscribe(data => {
+      // do anything
+    });
+}
+```
+```typescript
+@Component({
+  ...
+})
+export class DialogComponent{
+  @Input() data; // data from NgxVtModalOptions object
+  
+  @Output() myCustomEvent$ = new EventEmitter();
 
-## Further help
+  constuctor(
+    private modalService: NgxVtModalService
+  ){}
+  
+  onDismiss(): void {
+      this.modalService.close();
+  }
+  
+  onClose(): void {
+    this.modalService.close({result: 'OK', ...data}) 
+    
+    // or with custom Event
+    this.myCustomEvent$.next({...data});
+    this.modalService.close();
+  }
+  
+}
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Options
+
+<table>
+<thead>
+<th>Option</th>
+<th>Mandatory<br> option</th>
+<th>Data<br> type</th>
+<th>Default<br> value</th>
+</thead>
+<tbody>
+<tr>
+<td>
+<b>useEsc</b><br>
+<i>Close the modal with escape key</i>
+</td>
+<td>No</td>
+<td>boolean</td>
+<td>false</td>
+</tr>
+
+<tr>
+<td>
+<b>closeOnBackdropClick</b>
+<br>
+<i>Close the modal on the backdrop click</i>
+</td>
+<td>No</td>
+<td>boolean</td>
+<td>false</td>
+</tr>
+
+<tr>
+<td>
+<b>showHeader</b>
+<br>
+<i>Show header of the modal</i>
+</td>
+<td>No</td>
+<td>boolean</td>
+<td>
+<ul>
+unavailable:
+<li>NgxVtModalSize.SMALL
+</ul>
+<ul>
+true:
+<li>NgxVtModalSize.DEFAULT
+<li>NgxVtModalSize.FULLSCREEN
+</ul>
+</td>
+</tr>
+
+<tr>
+<td>
+<b>title</b><br>
+<i>Modal title</i>
+</td>
+<td>No</td>
+<td>string</td>
+<td>' ' (empty string),<br> when showHeader is true</td>
+</tr>
+
+<tr>
+<td>
+<b>showCloseButton</b><br>
+<i>Show close button</i>
+</td>
+<td>No</td>
+<td>boolean</td>
+<td>
+<ul>
+unavailable:
+<li>NgxVtModalSize.SMALL
+</ul>
+<ul>
+true:
+<li>NgxVtModalSize.DEFAULT
+<li>NgxVtModalSize.FULLSCREEN
+</ul>
+</td>
+</tr>
+
+<tr>
+<td>
+<b>class</b><br>
+<i>Custom css class for the modal</i>
+</td>
+<td>No</td>
+<td>string</td>
+<td>' ' (empty string)</td>
+</tr>
+
+<tr>
+<td>
+<b>size</b><br>
+<i>Modal size</i>
+</td>
+<td>No</td>
+<td>
+enum:
+<ul>
+<li> NgxVtModalSize.SMALL
+<li> NgxVtModalSize.DEFAULT
+<li> NgxVtModalSize.FULLSCREEN
+</ul>
+</td>
+<td>
+NgxVtModalSize.DEFAULT
+</td>
+</tr>
+
+<tr>
+<td>
+<b>data</b><br>
+<i>Modal data</i>
+</td>
+<td>No</td>
+<td>Object: any</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
