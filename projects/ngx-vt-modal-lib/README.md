@@ -180,11 +180,11 @@ true:
 </td>
 <td>No</td>
 <td>
-enum:
+enum NgxVtModalSize:
 <ul>
-<li> NgxVtModalSize.SMALL
-<li> NgxVtModalSize.DEFAULT
-<li> NgxVtModalSize.FULLSCREEN
+<li> .SMALL
+<li> .DEFAULT
+<li> .FULLSCREEN
 </ul>
 </td>
 <td>
