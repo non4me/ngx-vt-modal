@@ -17,6 +17,10 @@ imports: [
 
 </pre>
 
+## Demo
+
+https://non4me.github.io/ngx-vt-modal/
+
 ## Usage
 
 ```typescript
