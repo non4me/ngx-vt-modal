@@ -7,7 +7,7 @@
     "pack-lib": "cd ./projects/ngx-vt-modal-lib/dist && npm pack",
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --base-href=/ngx-vt-modal",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
