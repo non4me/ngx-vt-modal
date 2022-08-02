@@ -45,7 +45,7 @@ openModal(): void {
   // build-in Event closeModal$
   modalRef.closeModal$
     .subscribe(data => {
-        if.data?.result === 'OK' {
+        if(data?.result === 'OK') {
             // do anything
         }
     });
