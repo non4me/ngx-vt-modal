@@ -7,8 +7,10 @@ This library was generated with [Angular CLI](https://github.com/angular/angular
 
 This modal is just container. You can off the predefined header and totally customized design of the modal window.
 
-## Instalation
+## Demo
+https://non4me.github.io/ngx-vt-modal/
 
+## Instalation
 Run `ng install ngx-vt-modal`
 
 Add to `app.module.ts`:
@@ -19,15 +21,9 @@ imports: [
     NgxVtModalModule,
     ...
 ]
-
 </pre>
 
-## Demo
-
-https://non4me.github.io/ngx-vt-modal/
-
 ## Usage
-
 ```typescript
 // Modal opener component or service
 constuctor(
@@ -91,7 +87,6 @@ export class DialogComponent{
 ```
 
 ## Options
-
 <table>
 <thead>
 <th>Option</th>
