@@ -191,9 +191,9 @@ true:
 <td>
 enum NgxVtModalSize:
 <ul>
-<li> .SMALL
-<li> .DEFAULT
-<li> .FULLSCREEN
+<li> SMALL
+<li> DEFAULT
+<li> FULLSCREEN
 </ul>
 </td>
 <td>
