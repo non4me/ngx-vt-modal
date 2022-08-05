@@ -2,6 +2,11 @@
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.2.
 
+* mobile friendly
+* easy adaptive
+
+This modal is just container. You can off the predefined header and totally customized design of modal window.
+
 ## Instalation
 
 Run `ng install ngx-vt-modal`
