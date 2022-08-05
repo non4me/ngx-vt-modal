@@ -5,7 +5,7 @@ This library was generated with [Angular CLI](https://github.com/angular/angular
 * mobile friendly
 * easy adaptive
 
-This modal is just container. You can off the predefined header and totally customized design of modal window.
+This modal is just container. You can off the predefined header and totally customized design of the modal window.
 
 ## Instalation
 
