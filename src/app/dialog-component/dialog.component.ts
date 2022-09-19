@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { NgxVtModalService } from 'ngx-vt-modal';
+import { NgxVtModalService } from '../../../projects/ngx-vt-modal-lib/src/public-api';
 
 @Component({
   selector: 'app-dialog-component',
@@ -12,9 +12,7 @@ export class DialogComponent {
 
   @Output() myCustomEvent$ = new EventEmitter();
 
-  private dataFromModal = {
-    message: 'Hello from modal'
-  };
+  private dataFromModal = { message: 'Hello from modal' };
 
   constructor(private modalService: NgxVtModalService) {
   }

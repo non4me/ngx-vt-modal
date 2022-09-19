@@ -15,7 +15,8 @@
       "ngx-vt-modal-lib": [
         "dist/ngx-vt-modal-lib/ngx-vt-modal-lib",
         "dist/ngx-vt-modal-lib"
-      ]
+      ],
+      "_lib/*": ["projects/ngx-vt-modal-lib/src/lib"]
     },
     "experimentalDecorators": true,
     "moduleResolution": "node",

@@ -1,5 +1,5 @@
-<div class="ngx-vt-modal-{{modalSize}}">
-  <div class="ngx-vt-modal-{{modalSize}}__header" *ngIf="showHeader">
+<div [ngxVtDragging]="draggable" class="ngx-vt-modal-{{modalSize}}">
+  <div [ngxVtDraggingHandle]="draggable" class="ngx-vt-modal-{{modalSize}}__header" *ngIf="showHeader">
     <div class="ngx-vt-modal-{{modalSize}}__title">{{ options?.title }}</div>
     <div class="ngx-vt-modal-{{modalSize}}__close" (click)="close()"  *ngIf="showCloseButton">✕</div>
   </div>

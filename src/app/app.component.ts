@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgxVtModalService, NgxVtModalSize } from 'ngx-vt-modal';
+import { NgxVtModalService, NgxVtModalSize } from '../../projects/ngx-vt-modal-lib/src/public-api';
 import { DialogComponent } from './dialog-component/dialog.component';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
@@ -22,6 +22,7 @@ export class AppComponent implements OnInit {
       useEsc: false,
       closeOnBackdropClick: false,
       showHeader: true,
+      draggable: true,
       title: 'Tile',
       showCloseButton: true,
       class: 'custom-modal-class',

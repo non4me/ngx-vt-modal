@@ -20,8 +20,8 @@ import { NgxVtModalCloseStatus } from './model/ngx-vt-modal-close-status';
 @Injectable()
 export class NgxVtModalService {
 
-  private backdrop: HTMLDivElement;
-  private modals = [];
+  private backdrop: HTMLDivElement | null = null;
+  private modals: any[] = [];
   private renderer: Renderer2;
   private MODAL_BODY_SELECTOR = 'div#ngx-vt-modal-body';
   private DEFAULT_BACKGROUND_COLOR = '#00000066'
@@ -40,6 +40,13 @@ export class NgxVtModalService {
     this.createBackdrop();
     const host = this.createHost(options);
 
+    if(!options || options?.draggable === undefined) {
+      options = {
+        ...options,
+        draggable: true
+      }
+    }
+
     const modalRef = this.componentFactoryResolver.resolveComponentFactory<any>(NgxVtModalTemplateComponent).create(this.injector);
     modalRef.instance.options = { ...options };
 
@@ -55,7 +62,7 @@ export class NgxVtModalService {
       this.renderer.addClass(domNodeModal, options.class);
     }
 
-    modalBody.append(domNodeComponent);
+    modalBody?.append(domNodeComponent);
     host.append(domNodeModal);
 
     this.modals.push({ modal: modalRef, component: componentRef, host });
@@ -72,7 +79,7 @@ export class NgxVtModalService {
       return;
     }
 
-    const removedModal = this.modals.pop();
+    const removedModal: any = this.modals.pop();
 
     this.appRef.detachView(removedModal.component.hostView);
     removedModal.component.instance.closeModal$.next(data);
@@ -137,7 +144,8 @@ export class NgxVtModalService {
     return Math.max(
       ...Array.from(document.getElementsByTagName('div'), el => {
         const style = getComputedStyle(el);
-        return style.position !== 'static' && +style.zIndex > 0 && +style.zIndex
+
+        return +((style.position !== 'static') && (+style.zIndex > 0) && +style.zIndex)
       }), 0
     );
   }

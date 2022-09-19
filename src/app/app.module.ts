@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgxVtModalModule } from 'ngx-vt-modal';
 
 import { AppComponent } from './app.component';
 import { DialogComponent } from './dialog-component/dialog.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgxVtModalModule } from '../../projects/ngx-vt-modal-lib/src/public-api';
 
 @NgModule({
   declarations: [

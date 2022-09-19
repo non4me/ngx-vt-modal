@@ -1,3 +1,4 @@
+
 <div [formGroup]="form" class="form table-container" *ngIf="form">
   <div class="flex-table row" role="rowgroup">
     <div class="flex-row first">
@@ -26,6 +27,18 @@
     </div>
     <div class="flex-row">
       <input type="checkbox" formControlName="showHeader">
+    </div>
+  </div>
+
+
+
+  <div class="flex-table row" role="rowgroup">
+    <div class="flex-row first">
+      <b>draggable</b><br>
+      <i>Make the modal draggable</i>
+    </div>
+    <div class="flex-row">
+      <input type="checkbox" formControlName="draggable">
     </div>
   </div>
 

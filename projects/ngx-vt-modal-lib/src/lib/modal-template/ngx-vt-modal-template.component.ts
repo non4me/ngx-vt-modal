@@ -16,11 +16,12 @@ import { NgxVtModalSize } from '../model/ngx-vt-modal-size';
 })
 export class NgxVtModalTemplateComponent implements OnInit {
 
-  @Input() options: NgxVtModalOptions;
+  @Input() options!: NgxVtModalOptions;
 
   showHeader = true;
+  draggable = false;
   showCloseButton = true;
-  modalSize = NgxVtModalSize.DEFAULT;
+  modalSize: NgxVtModalSize = NgxVtModalSize.DEFAULT;
 
   constructor(private service: NgxVtModalService) {
   }
@@ -35,7 +36,8 @@ export class NgxVtModalTemplateComponent implements OnInit {
   ngOnInit(): void {
     this.showHeader = typeof this.options.showHeader === 'undefined' ? true : this.options.showHeader;
     this.showCloseButton = typeof this.options.showCloseButton === 'undefined' ? true : this.options.showCloseButton;
-    this.modalSize = Object.values(NgxVtModalSize).includes(this.options?.size) ? this.options?.size : NgxVtModalSize.DEFAULT;
+    this.modalSize = this.options?.size || NgxVtModalSize.DEFAULT;
+    this.draggable = (this.modalSize === NgxVtModalSize.DEFAULT) && this.showHeader && this.options.draggable || false;
   }
 
   close(): void {

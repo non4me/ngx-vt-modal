@@ -27,6 +27,11 @@ export interface NgxVtModalOptions {
   showCloseButton?: boolean; // default: unable - for small modal, true - for default and fullscreen
 
   /**
+   * Make the modal draggable
+   */
+  draggable?: boolean; // default: unable - for small && fullscreen modal, true - for default
+
+  /**
    * Custom CSS class for opened modal
    */
   class?: string;
