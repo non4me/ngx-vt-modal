@@ -1,9 +1,16 @@
-# ngx-vtModal
+# NgxVtModal - minimalist and zero-dependency library
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.2.
 
-## Instalation
+* mobile friendly
+* easy adaptive
 
+This modal is just container. You can off the predefined header and totally customized design of the modal window.
+
+## Demo
+https://non4me.github.io/ngx-vt-modal/
+
+## Instalation
 Run `ng install ngx-vt-modal`
 
 Add to `app.module.ts`:
@@ -11,18 +18,16 @@ Add to `app.module.ts`:
 import { NgxVtModalModule } from 'ngx-vt-modal';
 ...
 imports: [
-    NgxVtModalModule,
+    NgxVtModalModule.forRoot({...defaultOptions}),
     ...
 ]
-
 </pre>
 
 ## Usage
-
 ```typescript
 // Modal opener component or service
 constuctor(
-    private modalService: NgxVtModalService
+    private modalService: NgxVtModalService;
 ){}
 
 openModal(): void {
@@ -82,7 +87,6 @@ export class DialogComponent{
 ```
 
 ## Options
-
 <table>
 <thead>
 <th>Option</th>
@@ -110,6 +114,17 @@ export class DialogComponent{
 <td>No</td>
 <td>boolean</td>
 <td>false</td>
+</tr>
+
+<tr>
+<td>
+<b>draggable</b>
+<br>
+<i>Make the modal draggable</i>
+</td>
+<td>No</td>
+<td>boolean</td>
+<td>true</td>
 </tr>
 
 <tr>
@@ -182,9 +197,9 @@ true:
 <td>
 enum NgxVtModalSize:
 <ul>
-<li> .SMALL
-<li> .DEFAULT
-<li> .FULLSCREEN
+<li> SMALL
+<li> DEFAULT
+<li> FULLSCREEN
 </ul>
 </td>
 <td>

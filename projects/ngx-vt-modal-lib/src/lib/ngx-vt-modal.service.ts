@@ -15,6 +15,8 @@ import { NgxVtModalTemplateComponent } from './modal-template/ngx-vt-modal-templ
 import { NgxVtModalOptions } from './model/ngx-vt-modal-options';
 import { Observable } from 'rxjs';
 import { NgxVtModalCloseStatus } from './model/ngx-vt-modal-close-status';
+import { NgxVtModalSize } from './model/ngx-vt-modal-size';
+import { DEFAULT_OPTIONS } from './ngx-vt-modal.module';
 
 
 @Injectable()
@@ -24,28 +26,42 @@ export class NgxVtModalService {
   private modals: any[] = [];
   private renderer: Renderer2;
   private MODAL_BODY_SELECTOR = 'div#ngx-vt-modal-body';
-  private DEFAULT_BACKGROUND_COLOR = '#00000066'
+  private DEFAULT_BACKGROUND_COLOR = '#00000066';
+  private defaultOptions: NgxVtModalOptions = {
+    title: '',
+    useEsc: false,
+    closeOnBackdropClick: false,
+    showCloseButton: false,
+    showHeader: true,
+    draggable: true,
+    class: '',
+    size: NgxVtModalSize.DEFAULT
+  };
 
   constructor(
+    @Inject(DEFAULT_OPTIONS) private options: NgxVtModalOptions,
     @Inject(DOCUMENT) private document: Document,
     private componentFactoryResolver: ComponentFactoryResolver,
     private appRef: ApplicationRef,
     private injector: Injector,
-    private rendererFactory: RendererFactory2,
+    private rendererFactory: RendererFactory2
   ) {
     this.renderer = rendererFactory.createRenderer(null, null);
+
+    this.defaultOptions = {
+      ...this.defaultOptions,
+      ...options
+    };
   }
 
   open(component: Type<any>, options?: NgxVtModalOptions): { closeModal$: Observable<any> } | any {
+    options = {
+      ...this.defaultOptions,
+      ...options
+    };
+
     this.createBackdrop();
     const host = this.createHost(options);
-
-    if(!options || options?.draggable === undefined) {
-      options = {
-        ...options,
-        draggable: true
-      }
-    }
 
     const modalRef = this.componentFactoryResolver.resolveComponentFactory<any>(NgxVtModalTemplateComponent).create(this.injector);
     modalRef.instance.options = { ...options };
@@ -106,17 +122,17 @@ export class NgxVtModalService {
 
     if (options?.closeOnBackdropClick) {
       this.renderer.listen(this.backdrop, 'click', (event) => {
-        if(host == event.target) {
-          this.close({dismiss: NgxVtModalCloseStatus.BACKDROP})
+        if (host == event.target) {
+          this.close({ dismiss: NgxVtModalCloseStatus.BACKDROP });
         }
-      })
+      });
     }
 
     return host;
   }
 
   private createBackdrop(): void {
-    if(!this.backdrop) {
+    if (!this.backdrop) {
       this.backdrop = this.renderer.createElement('div');
       this.renderer.setStyle(this.backdrop, 'zIndex', `${this.maxZIndex() + 1}`);
       this.renderer.addClass(this.backdrop, 'ngx-vt-modal-backdrop');
@@ -132,7 +148,7 @@ export class NgxVtModalService {
       //   --ngx-vt-modal-backdrop-background : yourColor;
       // }
       const background = getComputedStyle(document.documentElement)
-        .getPropertyValue('--ngx-vt-modal-backdrop-background')  || this.DEFAULT_BACKGROUND_COLOR;
+        .getPropertyValue('--ngx-vt-modal-backdrop-background') || this.DEFAULT_BACKGROUND_COLOR;
       this.renderer.setStyle(this.backdrop, 'backgroundColor', background);
 
       const appRoot = this.document.body;
@@ -145,7 +161,7 @@ export class NgxVtModalService {
       ...Array.from(document.getElementsByTagName('div'), el => {
         const style = getComputedStyle(el);
 
-        return +((style.position !== 'static') && (+style.zIndex > 0) && +style.zIndex)
+        return +((style.position !== 'static') && (+style.zIndex > 0) && +style.zIndex);
       }), 0
     );
   }

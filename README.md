@@ -18,7 +18,7 @@ Add to `app.module.ts`:
 import { NgxVtModalModule } from 'ngx-vt-modal';
 ...
 imports: [
-    NgxVtModalModule,
+    NgxVtModalModule.forRoot({...defaultOptions}),
     ...
 ]
 </pre>
@@ -114,6 +114,17 @@ export class DialogComponent{
 <td>No</td>
 <td>boolean</td>
 <td>false</td>
+</tr>
+
+<tr>
+<td>
+<b>draggable</b>
+<br>
+<i>Make the modal draggable</i>
+</td>
+<td>No</td>
+<td>boolean</td>
+<td>true</td>
 </tr>
 
 <tr>

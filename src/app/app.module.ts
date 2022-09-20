@@ -13,7 +13,7 @@ import { NgxVtModalModule } from '../../projects/ngx-vt-modal-lib/src/public-api
   ],
   imports: [
     BrowserModule,
-    NgxVtModalModule,
+    NgxVtModalModule.forRoot(),
     ReactiveFormsModule
   ],
   providers: [],
